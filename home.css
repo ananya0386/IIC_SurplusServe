@@ -7,9 +7,43 @@
 }
 .video-container {
   position: relative;
-  width: 100%;
-  height: 100vh; /* full screen */
+  width: 100%;       /* full width */
+  height: 100vh;     /* full viewport height */
   overflow: hidden;
+}
+
+#bg-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* ← show entire video */
+  background: black;   /* optional: black bars for extra space */
+  z-index: -1;
+}
+.theme-toggle {
+  background: #06C167;  
+  color: #fff;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.3s ease;
+}
+
+.theme-toggle:hover {
+  background: #049a4e;
+}
+
+/* Dark mode version */
+body.dark-mode .theme-toggle {
+  background: #444;
+  color: #fff;
+}
+body.dark-mode .theme-toggle:hover {
+  background: #222;
 }
 
 #bg-video {
@@ -44,6 +78,7 @@
 }
 body{
   background-color: #fefefe;
+  padding-top: 80px; /* to prevent content being hidden behind fixed header */
 }
 /* navigation bar  */
 header{
@@ -52,8 +87,13 @@ header{
   background-color: var(--navcolor);
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  padding: 0 100px;
+  align-items: center;       /* important: vertical centering */
+  padding: 0 100px;          /* you can reduce on smaller screens */
+  position: fixed;            /* keep header fixed */
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
 }
 .logo{
   font-size: 28px;
@@ -71,7 +111,7 @@ header{
 .nav-bar ul li a{
    display: block;
    color: var(--navfont);
-   font-size: 18px ;
+   font-size: 16px ;
    padding:10px 25px;
    border-radius: 50px;
    transition: 0.2s;
@@ -303,11 +343,21 @@ padding-top: 2rem;
 .footer .footer-center {
   width: 30%;
 }
+/* Switch container */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 25px;
+  margin-left: 1rem; /* space from logo */
+}
 
-
-
-
-
+/* Hide checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
 .footer .footer-center p {
   display: inline-block;
   color: #ffffff;

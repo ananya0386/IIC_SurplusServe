@@ -20,11 +20,12 @@
     .roles {
       display: flex;
       justify-content: center;
-      gap: 40px;
+      gap: 30px;
       flex-wrap: wrap;
     }
     .role-card {
-      width: 250px;
+      width: 400px;
+      height:auto;
       padding: 20px;
       border: 1px solid #ddd;
       border-radius: 12px;
@@ -38,7 +39,7 @@
       box-shadow: 0 4px 12px rgba(0,0,0,0.1);
     }
     .role-card i {
-      font-size: 50px;
+      font-size: 80px;
       color: #06C167;
       margin-bottom: 15px;
     }
@@ -99,12 +100,17 @@
   overflow: hidden;
   border-radius: 15px;
   margin: 2rem auto;
+  margin-top:300px;
+  
   
 }
 
 .slides {
   position: relative;
   height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .slide {
@@ -116,26 +122,27 @@
 }
 
 .slide img {
-  width: 100%;
-  height: 100%;
+ display: block;              /* removes inline spacing */
+  margin: 0 auto;              /* centers horizontally */
+  height: 600px;
+  max-width: 100%;             /* prevents overflow */
   object-fit: cover;
-  filter: brightness(60%);
-  object-fit: cover;
+  border-radius: 15px;
 }
 
 .slide p {
   position: absolute;
-  bottom: 20px;
-  left: 50%;
-  transform: translateX(-50%);
+  top:60%;
+  left: 40%;            /* horizontally centered */
+  transform: translate(-50%, -50%);
   color: #fff;
-  font-size: 35px;
+  font-size: 32px;
+  font-weight: bold;
   text-align: center;
-  max-width: 80%;
-  padding: 10px 15px;
-  border-radius: 10px;
+  max-width: 80%;       /* wraps inside invisible box */
+  line-height: 1.4;
+  text-shadow: 2px 2px 8px rgba(0,0,0,0.6); 
 }
-
 .slide.active {
   opacity: 1;
 }
@@ -145,7 +152,7 @@
 <body>
   <header>
     <div class="logo">Surplus<b style="color: #06C167;">Serve</b></div>
-    <button id="darkToggle">🌙 Toggle Dark Mode</button>
+    
     
     <div class="hamburger">
       <div class="line"></div>
@@ -162,10 +169,12 @@
                 <li><a href="donations.html">Donations</a></li>
                 <li><a href="profile.html" id="profile-link" style="display: none;">Profile</a></li>
                 <li><a href="fooddonate.html" class="donation-box">Donate</a></li>
+                <button id="darkToggle" class="theme-toggle">
+    🌙 Dark Mode
+  </button>
     
   </ul>
 </nav>
-
   </header>
 
   <section class="banner">
@@ -174,30 +183,22 @@
     <source src="img/surplus.mp4" type="video/mp4">
     Your browser does not support the video tag.
   </video>
-
-  
-
-  
   </section>
 
-  <div class="content">
-    <p style="font-size: 23px;">
-      “Cutting food waste is a delicious way of saving money, helping to feed the world and protect the planet.” 
-    </p>
-  </div>
+  <!-- Quote Slider -->
   <section class="quote-slider">
   <div class="slides">
     <div class="slide active">
       <img src="img/1.jpg" alt="Food Donation">
-      <p>"No plate wasted, No life forgotten"</p>
+      <p class="one">"No plate wasted, No life forgotten"</p>
     </div>
     <div class="slide">
       <img src="img/2.jpeg" alt="Helping Hands">
-      <p>“A surplus shared is a hunger spared.”</p>
+      <p class="two">“A surplus shared is a hunger spared.”</p>
     </div>
     <div class="slide">
       <img src="img/3.jpeg" alt="Community Support">
-      <p>“Surplus on your plate could be survival for another.”</p>
+      <p class="three">“Surplus on your plate could be survival for another.”</p>
     </div>
   </div>
 </section>

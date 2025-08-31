@@ -20,6 +20,37 @@
 body{
   background-color: #fefefe;
 }
+.theme-toggle {
+  background: #06C167;  
+  color: #fff;
+  border: none;
+  padding-top: 0;
+  margin-top: 1px;
+  padding: 5px 10px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.3s ease;
+  width:150px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.theme-toggle:hover {
+  background: #049a4e;
+}
+
+/* Dark mode version */
+body.dark-mode .theme-toggle {
+  background: #444;
+  color: #fff;
+}
+body.dark-mode .theme-toggle:hover {
+  background: #222;
+}
+
 /* navigation bar  */
 header{
   width: 100%;
@@ -46,7 +77,7 @@ header{
 .nav-bar ul li a{
    display: block;
    color: var(--navfont);
-   font-size: 18px ;
+   font-size: 16px ;
    padding:10px 25px;
    border-radius: 50px;
    transition: 0.2s;
@@ -60,6 +91,25 @@ header{
 .nav-bar ul li a.active{
   color:var(--navcolor);
   background-color: var(--navfont);
+}
+/* Dark mode styles */
+.dark-mode {
+  background-color: #121212;
+  color: #f5f5f5;
+}
+
+.dark-btn {
+  padding: 8px 15px;
+  border: none;
+  border-radius: 5px;
+  background-color: #06C167;
+  color: white;
+  cursor: pointer;
+  margin-left: 15px;
+}
+
+.dark-btn:hover {
+  background-color: #049a50;
 }
 @media only screen and (max-width:1320px){
   header{
@@ -613,5 +663,552 @@ button:hover{
         width: 300px;
       }
 }
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,500;0,700;0,800;1,400;1,600&display=swap');
+:root{
+  --navcolor:white;
+  --navfont:black;
+  --green:#06C167;
+  --box-shadow:0 .5rem 1rem rgba(0,0,0.1)
+}
+.video-container {
+  position: relative;
+  width: 100%;       /* full width */
+  height: 100vh;     /* full viewport height */
+  overflow: hidden;
+}
+
+#bg-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* ← show entire video */
+  background: black;   /* optional: black bars for extra space */
+  z-index: -1;
+}
+.theme-toggle {
+  background: #06C167;  
+  color: #fff;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.3s ease;
+}
+
+.theme-toggle:hover {
+  background: #049a4e;
+}
+
+/* Dark mode version */
+body.dark-mode .theme-toggle {
+  background: #444;
+  color: #fff;
+}
+body.dark-mode .theme-toggle:hover {
+  background: #222;
+}
+
+#bg-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  min-height: 100%;
+  object-fit: cover;
+  z-index: -1; /* put behind text */
+}
+
+.content {
+  position: relative;
+  z-index: 1;
+  color: white;
+  text-align: center;
+  top: 40%;
+}
 
 
+*{
+  
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+  /* font-family:sans-serif; */
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+
+}
+body{
+  background-color: #fefefe;
+  padding-top: 80px; /* to prevent content being hidden behind fixed header */
+}
+/* navigation bar  */
+header{
+  width: 100%;
+  height: 80px;
+  background-color: var(--navcolor);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;       /* important: vertical centering */
+  padding: 0 100px;          /* you can reduce on smaller screens */
+  position: fixed;            /* keep header fixed */
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+.logo{
+  font-size: 28px;
+  color:var(--navfont);
+}
+
+
+
+.hamburger{
+  display:none;
+}
+.nav-bar ul{
+  display: flex;
+}
+.nav-bar ul li a{
+   display: block;
+   color: var(--navfont);
+   font-size: 16px ;
+   padding:10px 25px;
+   border-radius: 50px;
+   transition: 0.2s;
+   margin: 0 5px;
+
+}
+.nav-bar ul li a:hover{
+  color: var(--navcolor);
+  background-color: var(--navfont);
+}
+.nav-bar ul li a.active{
+  color:var(--navcolor);
+  background-color: var(--navfont);
+}
+/* Dark mode styles */
+.dark-mode {
+  background-color: #121212;
+  color: #f5f5f5;
+}
+
+.dark-btn {
+  padding: 8px 15px;
+  border: none;
+  border-radius: 5px;
+  background-color: #06C167;
+  color: white;
+  cursor: pointer;
+  margin-left: 15px;
+}
+
+.dark-btn:hover {
+  background-color: #049a50;
+}
+
+@media only screen and (max-width:1320px){
+  header{
+    padding:0 50px;
+  }
+  .banner{
+    width: 100%;
+    height: 90vh;
+    background:url('cover.jpeg')no-repeat;
+  background-size: cover;
+  display: grid;
+  place-items:center;
+  padding-top: 8rem;
+  }
+}
+@media only screen and (max-width:1100px){
+  header{
+    padding:0 30px;
+  }
+}
+@media only screen and (max-width:900px){
+  
+  .hamburger{
+    display: block;
+    cursor: pointer;
+  }
+  .hamburger .line{
+    width:30px;
+    height: 3px;
+    background-color:var(--navfont);
+    margin: 6px 0;
+  }
+  
+
+  
+  .nav-bar{
+    height: 0;
+    position: absolute;
+    top:80px;
+    left: 0;
+    right: 0;
+    width: 100vw;
+    background-color: #06C167;
+    transition: 0.2s;
+    overflow: hidden;
+
+  }
+  .nav-bar.active {
+    height: 450px;
+    z-index: 10;
+  }
+ 
+  .nav-bar ul{
+    display: block;
+    width:fit-content;
+    margin: 80px auto 0 auto;
+    text-align: center;
+    transition: 0.5s;
+    opacity: 0;
+
+  }
+  .nav-bar.active ul {
+    opacity: 1;
+
+  }
+  .nav-bar ul li a{
+    margin-bottom: 12px;
+
+  }
+  .banner{
+    background-image: none;
+  }
+}
+/* nav end */
+
+.banner{
+  width: auto;
+  height: auto;
+  background:url('img/dona.jpg')no-repeat;
+  background-size: cover;
+  display: grid;
+  place-items:center;
+  padding-top: 8rem;
+}
+@media only screen   
+and (min-device-width : 1200px)  
+  {
+
+  
+
+
+    .banner{
+      
+     align-items: flex-end;
+width: 100%;
+height: 80vh;
+background: url('img/dona.jpg') no-repeat bottom center;
+background-size: cover;
+display: grid;
+padding-top: 2rem;
+    .wrapper{
+      padding:20px 40px 20px 40px;
+    }
+    
+  
+  }
+.content
+{
+  height: 150px; ;
+  padding: 20px;
+  margin-top: 250px;
+  background-color: #06C167;
+
+  z-index: 0;
+}
+
+.content p
+{
+  
+  font-size: 1.1em;
+  color:white;
+  margin: 20px 0;
+  font-weight: 400;
+  max-width: 700px;
+  align-items: center;
+}
+.banner a
+{
+  display: inline-block;
+  font-size: 2em;
+  background: #111;
+  padding: 10px 30px;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-weight: 500;
+  margin-top: 10px;
+  color: #fff;
+  letter-spacing: 2px;
+  transition: 0.2s;
+}
+.banner a:hover
+{
+  letter-spacing: 6px;
+}
+.msg{
+  height: 300px;
+}
+
+
+/* footer */
+.footer {
+  background-color: #414141;
+  width: 100%;
+  text-align: left;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  font-size: 16px;
+  padding: 50px;
+  margin-top: 50px;
+}
+
+.footer .footer-left,
+.footer .footer-center,
+.footer .footer-right {
+  display: inline-block;
+  vertical-align: top;
+}
+
+
+/* footer left*/
+
+.footer .footer-left {
+  width: 33%;
+  padding-right: 15px;
+}
+
+.footer .about {
+  line-height: 20px;
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: normal;
+  margin: 0;
+}
+
+.footer .about span {
+  display: block;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+
+/* footer center*/
+
+.footer .footer-center {
+  width: 30%;
+}
+/* Switch container */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 25px;
+  margin-left: 1rem; /* space from logo */
+}
+
+/* Hide checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+.footer .footer-center p {
+  display: inline-block;
+  color: #ffffff;
+  vertical-align: middle;
+  margin: 0;
+}
+
+.footer .footer-center p span {
+  display: block;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.footer .footer-center p a {
+  color: #06C167;
+  text-decoration: none;
+}
+
+
+/* footer right*/
+
+.footer .footer-right {
+  width: 35%;
+}
+
+.footer h2 {
+  color: #ffffff;
+  font-size: 36px;
+  font-weight: normal;
+  margin: 0;
+}
+
+.footer h2 span {
+  color: #06C167;
+}
+
+.footer .menu {
+  color: #ffffff;
+  margin: 20px 0 12px;
+  padding: 0;
+}
+
+.footer .menu a {
+  display: inline-block;
+  line-height: 1.8;
+  text-decoration: none;
+  color: inherit;
+}
+
+.footer .menu a:hover {
+  color: #06C167;
+}
+
+.footer .name {
+  color: #06C167;
+  font-size: 14px;
+  font-weight: normal;
+  margin: 0;
+}
+.deli .para{
+  font-size: 30px;
+  text-align: center;
+}
+
+@media (max-width: 767px) {
+  .content{
+    /* padding: 10px; */
+  }
+  .deli .para{
+    font-size: 23px; 
+    text-align: center;
+    
+
+  }
+  .deli img{
+   width: 100%;
+   height: 100%;
+  }
+  
+  
+  .footer {
+    font-size: 14px;
+  }
+  .footer .footer-left,
+  .footer .footer-center,
+  .footer .footer-right {
+    display: block;
+    width: 100%;
+    margin-bottom: 60px;
+    text-align: center;
+  }
+  .social{
+    
+    padding-left: 60px;
+  }
+
+  
+}
+
+/* social */
+.social
+{
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.social li
+{
+  list-style: none;
+}
+.social li a
+{
+  display: inline-block;
+
+  filter: invert(1);
+  transform: scale(0.5);
+  transition: 0.5s;
+}
+.social li a:hover
+{
+  transform: scale(0.5) translateY(-15px);
+}
+
+/* photo */
+
+.photo{
+  padding: 20px;
+}
+
+.wrapper{
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
+  grid-gap: 10px;
+  align-items: center;
+}
+.box{
+  overflow: hidden;
+  border-radius: 20px;
+  
+}
+.wrapper img{
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  transition: 0.5s all  ease-in-out;
+}
+.wrapper img:hover{
+   transform: scale(.9);
+
+}
+.heading{
+ font-size: 28px;
+ text-align: center; 
+ text-decoration: underline 5px;
+ text-decoration-color: #06C167;
+}
+  }
+  /* Dark mode variables + base colors */
+body.dark-mode {
+  --navcolor: #1e1e1e;
+  --navfont: #ffffff;
+  background-color: #121212;
+  color: #e0e0e0;
+}
+
+/* Components that used fixed light colors */
+body.dark-mode .role-card,
+body.dark-mode .form-popup {
+  background: #1f1f1f;
+  border-color: #333;
+}
+
+body.dark-mode .footer {
+  background-color: #0f0f0f;
+  color: #dddddd;
+}
+
+body.dark-mode .donation-box {
+  background: #0a8f4b;
+}
+
+/* Make sure default text links are readable in dark */
+body.dark-mode a { color: #8ab4f8; }
+
+/* Keep your mobile menu readable in dark */
+body.dark-mode .hamburger .line { background-color: var(--navfont); }
